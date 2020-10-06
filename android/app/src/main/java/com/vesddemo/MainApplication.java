@@ -28,7 +28,7 @@ import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Nullable;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends androidx.multidex.MultiDexApplication implements ReactApplication {
   private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(
     new BasePackageList().getPackageList()
   );

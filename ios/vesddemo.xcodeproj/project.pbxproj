@@ -133,6 +133,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
+				85157564330DB9F172AC0335 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +242,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vesddemo/Pods-vesddemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85157564330DB9F172AC0335 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vesddemo/Pods-vesddemo-frameworks.sh",
+				"${PODS_ROOT}/VideoEditorSDK/VideoEditorSDK.framework",
+				"${PODS_ROOT}/VideoEditorSDK/VideoEditorSDK.framework.dSYM",
+				"${PODS_ROOT}/imglyKit/ImglyKit.framework",
+				"${PODS_ROOT}/imglyKit/ImglyKit.framework.dSYM",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VideoEditorSDK.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/VideoEditorSDK.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImglyKit.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/ImglyKit.framework.dSYM",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vesddemo/Pods-vesddemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
