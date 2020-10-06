@@ -1,0 +1,12 @@
+{
+  "name": "vesddemo",
+  "displayName": "vesddemo",
+  "expo": {
+    "name": "vesddemo",
+    "slug": "vesddemo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
