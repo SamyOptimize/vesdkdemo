@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import * as Permissions from "expo-permissions";
 import {
   StyleSheet,
   Text,
@@ -17,14 +18,32 @@ import {
 } from "react-native-videoeditorsdk";
 
 export default class App extends Component {
-  state = { imageUri: null, width: 0, height: 0 };
+  state = { imageUri: null, width: 0, height: 0, status: null };
+
+  askForPermssion = async (screenProps) => {
+    const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+    console.log("status", status);
+    if (status !== "granted") {
+      Alert.alert(
+        "Permision denied or undetermined",
+        "Please allow access to the gallery to upload media " +
+          `Permissions.CAMERA_ROLL = ${status}`
+      );
+    }
+    this.setState({ status });
+    return status;
+  };
   pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: "Videos",
-      base64: false,
-      exif: false,
-      quality: 0.8,
-    });
+    let status = await this.askForPermssion();
+    let result = "";
+    if (status === "granted") {
+      result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: "Videos",
+        base64: false,
+        exif: false,
+        quality: 0.8,
+      });
+    }
     return result;
   };
 
@@ -72,6 +91,7 @@ export default class App extends Component {
         {/* <Video source={{ uri: this.state.imageUri }} style={styles.image} /> */}
         <Button title="Choose Video" onPress={this.editImage} />
         <Text>{`${this.state.imageUri ? "Video selected" : "No video"}`}</Text>
+        <Text>{`${`Permissions.CAMERA_ROLL = ${this.state.status}`}`}</Text>
         <Text>{`width:${this.state.width}-height:${this.state.height}`}</Text>
       </View>
     );
