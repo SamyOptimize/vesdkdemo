@@ -21,7 +21,7 @@ export default class App extends Component {
   state = { imageUri: null, width: 0, height: 0, status: null };
 
   askForPermssion = async (screenProps) => {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+    const { status } = await Permissions.askAsync(Permissions.CAMERA);
     console.log("status", status);
     if (status !== "granted") {
       Alert.alert(

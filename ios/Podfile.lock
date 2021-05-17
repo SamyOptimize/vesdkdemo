@@ -58,7 +58,9 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - imglyKit (10.21.2)
+  - imglyKit (10.23.1)
+  - PhotoEditorSDK (10.23.1):
+    - imglyKit (= 10.23.1)
   - RCTRequired (0.62.2)
   - RCTTypeSafety (0.62.2):
     - FBLazyVector (= 0.62.2)
@@ -283,14 +285,18 @@ PODS:
     - ReactCommon/callinvoker (= 0.62.2)
   - RNGestureHandler (1.7.0):
     - React
+  - RNPhotoEditorSDK (2.8.0):
+    - PhotoEditorSDK (~> 10.23)
+    - React
+    - React-RCTImage
   - RNReanimated (1.13.1):
     - React
   - RNScreens (2.10.1):
     - React
-  - RNVideoEditorSDK (2.5.0):
+  - RNVideoEditorSDK (2.8.0):
     - React
     - React-RCTImage
-    - VideoEditorSDK (~> 10.18)
+    - VideoEditorSDK (~> 10.23)
   - UMAppLoader (1.3.0)
   - UMBarCodeScannerInterface (5.3.0)
   - UMCameraInterface (5.3.0)
@@ -308,8 +314,8 @@ PODS:
     - UMFontInterface
   - UMSensorsInterface (5.3.0)
   - UMTaskManagerInterface (5.3.0)
-  - VideoEditorSDK (10.21.2):
-    - imglyKit (= 10.21.2)
+  - VideoEditorSDK (10.23.1):
+    - imglyKit (= 10.23.1)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -354,6 +360,7 @@ DEPENDENCIES:
   - ReactCommon/callinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNPhotoEditorSDK (from `../node_modules/react-native-photoeditorsdk`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVideoEditorSDK (from `../node_modules/react-native-videoeditorsdk`)
@@ -376,6 +383,7 @@ SPEC REPOS:
   trunk:
     - boost-for-react-native
     - imglyKit
+    - PhotoEditorSDK
     - VideoEditorSDK
 
 EXTERNAL SOURCES:
@@ -455,6 +463,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNPhotoEditorSDK:
+    :path: "../node_modules/react-native-photoeditorsdk"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -510,7 +520,8 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 5465d51ccfeecb7faa12f9ae0024f2044ce4044e
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  imglyKit: d0620363736f20e19f71eb5ff67377ff48af97d7
+  imglyKit: 4ffe931831f12ccab5d41c8586687d8e04dd97ad
+  PhotoEditorSDK: a2e32374a7da6d4e45b97e8886cfb2096c698626
   RCTRequired: cec6a34b3ac8a9915c37e7e4ad3aa74726ce4035
   RCTTypeSafety: 93006131180074cffa227a1075802c89a49dd4ce
   React: 29a8b1a02bd764fb7644ef04019270849b9a7ac3
@@ -531,9 +542,10 @@ SPEC CHECKSUMS:
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
   RNGestureHandler: b6b359bb800ae399a9c8b27032bdbf7c18f08a08
+  RNPhotoEditorSDK: d7bb1d0e979b88d8b30b47dd726181f893f67017
   RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
   RNScreens: b748efec66e095134c7166ca333b628cd7e6f3e2
-  RNVideoEditorSDK: 271682157e429f1df5bf3629d6bcb1143fe14089
+  RNVideoEditorSDK: ec512a9244f892878aa9aa5b9a6705888f43f992
   UMAppLoader: 5db5dc03176c6238da9c8b3657a370137882a4ad
   UMBarCodeScannerInterface: 017672479f93de88d94c3a50dfb66b5348b65989
   UMCameraInterface: 22bd2c4bf15dcf68530368fa5704af7490818457
@@ -547,9 +559,9 @@ SPEC CHECKSUMS:
   UMReactNativeAdapter: 61ae88818058b7849bbf5b79bf97872cb3c8e0eb
   UMSensorsInterface: 49bea41dcfcc041f0bbab27cfe4a6006f1dde0c0
   UMTaskManagerInterface: 6cad5929dbc0a5b986ad4d77caac497d4de730a7
-  VideoEditorSDK: 0dcdde1a786c79ad0391a921e198b1722ec61f01
+  VideoEditorSDK: 251e32a43e98bbd6b4113551c74e9b607515f3c0
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
 
 PODFILE CHECKSUM: 34b6bcb10365e51b6d1c34fb6898b82803cf7504
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
