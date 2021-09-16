@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import * as Permissions from "expo-permissions";
+import * as ImageManipulator from "expo-image-manipulator";
+
 import {
   StyleSheet,
   Text,
@@ -11,11 +13,11 @@ import {
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import {
-  VESDK,
+  PESDK,
   Configuration,
   SerializationExportType,
   VideoFormat,
-} from "react-native-videoeditorsdk";
+} from "react-native-photoeditorsdk";
 
 export default class App extends Component {
   state = { imageUri: null, width: 0, height: 0, status: null };
@@ -38,10 +40,9 @@ export default class App extends Component {
     let result = "";
     if (status === "granted") {
       result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: "Videos",
         base64: false,
         exif: false,
-        quality: 0.8,
+
       });
     }
     return result;
@@ -55,7 +56,6 @@ export default class App extends Component {
         enabled: true,
         exportType: SerializationExportType.OBJECT,
       },
-      filename: "export",
     };
     let configuration: Configuration = {
       forceCrop: true,
@@ -69,12 +69,16 @@ export default class App extends Component {
     // }
 
     if (result && !result.cancelled) {
-      VESDK.openEditor({ uri: result.uri }, configuration)
+      PESDK.openEditor({ uri: result.uri }, configuration)
         .then(async (editedImage) => {
-          console.log(editedImage);
-
+          editedImage=  await ImageManipulator.manipulateAsync(
+            editedImage.image
+            );
+            console.log(editedImage);
           this.setState({
-            imageUri: editedImage.hasChanges ? editedImage.video : result.uri,
+            imageUri: editedImage,
+            width:editedImage.width,
+            height:editedImage.height,
           });
         })
         .catch((err) => {
@@ -89,8 +93,8 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         {/* <Video source={{ uri: this.state.imageUri }} style={styles.image} /> */}
-        <Button title="Choose Video" onPress={this.editImage} />
-        <Text>{`${this.state.imageUri ? "Video selected" : "No video"}`}</Text>
+        <Button title="Choose image" onPress={this.editImage} />
+        <Text>{`${this.state.imageUri ? "Image selected" : "No image"}`}</Text>
         <Text>{`${`Permissions.CAMERA_ROLL = ${this.state.status}`}`}</Text>
         <Text>{`width:${this.state.width}-height:${this.state.height}`}</Text>
       </View>
