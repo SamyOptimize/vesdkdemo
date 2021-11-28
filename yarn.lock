@@ -7926,10 +7926,10 @@ react-native-gesture-handler@~1.8.0:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
-react-native-photoeditorsdk@^2.10.1:
-  version "2.10.1"
-  resolved "https://registry.yarnpkg.com/react-native-photoeditorsdk/-/react-native-photoeditorsdk-2.10.1.tgz#98ca38c6ebba918cdaa9319d96b6c3afad391cdf"
-  integrity sha512-UJmC38jW5ALAdsz0Gv+/C69rzATP793uy8TblL2zBnrPlbsVsNTSXGsY2x9kBM8NXN1MQqZ5ZUp1Lx4vkAQxNQ==
+react-native-photoeditorsdk@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/react-native-photoeditorsdk/-/react-native-photoeditorsdk-2.11.0.tgz#c8dc1d05b73571715ef8fd1fcb3e311de34355bf"
+  integrity sha512-P9g4w0eIiVo/6l+lIYI3wRaJnEYK8ICPxkXlTRjek4uQgM5kUfJi1XUsOaxVdhub5kFEOaaYNFReHhVhY000Jw==
 
 react-native-reanimated@~1.13.0:
   version "1.13.1"
@@ -7973,10 +7973,10 @@ react-native-unimodules@~0.12.0:
     unimodules-sensors-interface "~5.4.0"
     unimodules-task-manager-interface "~5.4.0"
 
-react-native-videoeditorsdk@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/react-native-videoeditorsdk/-/react-native-videoeditorsdk-2.8.0.tgz#cc6a9314547dbcc7ef1a89b30dba912013b0ac93"
-  integrity sha512-ytjAXiL60KYo9jnUlhkIscj/w00aav4gt8SGKYV9iLNBwDpNth8Ki4VQ4cMCzBsW4T6GUSGIL7/p90I87rPUDQ==
+react-native-videoeditorsdk@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/react-native-videoeditorsdk/-/react-native-videoeditorsdk-2.11.0.tgz#05dabca13b78fd9ffbfeeaedb7fe221d72bb38be"
+  integrity sha512-4RMjBLfyV467EyLMncWgIcDg/YjASBEtdxU2XWJZhIRxwQYdTLQiasrfN3FNuGFkeTRmud5I6PuaqT/EbgnRrQ==
 
 react-native-web@~0.13.12:
   version "0.13.15"

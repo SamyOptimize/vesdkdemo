@@ -42,7 +42,7 @@ export default class App extends Component {
       result = await ImagePicker.launchImageLibraryAsync({
         base64: false,
         exif: false,
-
+        mediaTypes: "All",
       });
     }
     return result;
@@ -71,14 +71,14 @@ export default class App extends Component {
     if (result && !result.cancelled) {
       PESDK.openEditor({ uri: result.uri }, configuration)
         .then(async (editedImage) => {
-          editedImage=  await ImageManipulator.manipulateAsync(
+          editedImage = await ImageManipulator.manipulateAsync(
             editedImage.image
-            );
-            console.log(editedImage);
+          );
+          console.log(editedImage);
           this.setState({
             imageUri: editedImage,
-            width:editedImage.width,
-            height:editedImage.height,
+            width: editedImage.width,
+            height: editedImage.height,
           });
         })
         .catch((err) => {

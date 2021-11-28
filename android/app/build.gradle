@@ -27,6 +27,9 @@ imglyConfig {
         include 'assets:sticker-shapes'
         include 'assets:sticker-emoticons'
         include 'assets:sticker-animated'
+include 'ui:video-library'
+        include 'ui:video-composition'
+        include 'ui:audio-composition'
 
         include 'backend:sticker-animated'
         include 'backend:sticker-smart'
